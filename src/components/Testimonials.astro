@@ -3,35 +3,36 @@
 
 const reviews = [
   {
-    name: "Nichole Kidson",
-    text: "We've used kms twice now for house moves and I wouldn't want to ask anyone else! Hands down the best removal team around. Nothing is too much to ask. All the people working are incredibly helpful and diligent. Both times they have made my house move as stress free as possible. I am so grateful to you all."
+    name: "Elizabeth Linde",
+    text: "A little bit obsessed with my new floor! Kai did an amazing job fitting our karndean flooring in our new build. Lucky for us he had a cancellation and could fit us in on short notice. So much care was taken when installing, the attention to detail was amazing! For these guys to do this pattern on a full ground floor and it all to match up! Highly recommend! Thanks guys!"
   },
   {
-    name: "Dave Atkinson",
-    text: "Absolutely brilliant set of lads, bent over backwards to not let us down despite the problems with the van. Lads are so polite and what a work ethic with the hours they are putting in. Can’t recommend them highly enough. Big thanks to Kev and the team."
+    name: "Mark Gibson",
+    text: "Kai and his team made a great job of our flooring. His communication, honesty and reliability were to be commended. I had spent some time getting quotes and it was beginning to feel like every contractor had different opinions. Kai followed the advice of the F Ball technical department and measured moisture levels before committing to lay the floor. All round great service and thanks for all of your hard work."
   },
   {
-    name: "Kyrie Brumby",
-    text: "Kian and Danny moved us yesterday. They were absolutely incredible, they went above and beyond, nothing was too much trouble. Highly recommend and decently priced too!"
+    name: "Michelle Walton",
+    text: "Over the moon with my floor. Kai and his team have been fitting my full downstairs this week it looks amazing. So clean and tidy very professional and very high standard. Would definitely recommend lovely lads so friendly. Even though my floor was a nightmare they got it perfect."
   },
   {
-    name: "Kiera Gray",
-    text: "Amazing service used twice now. No messing with these lads. Straight to it. Price as well is spot on. They go above and beyond. Will not hesitate to recommend to anyone. Thank you again."
+    name: "Murat Canbay",
+    text: "Kai has done a great job helping me with LVT work. He was punctual and patient and very informative. Even though he was let down by his colleague he found somebody else and finished the job in time. I was concerned about glue down system especially having underfloor heating but he assured the system would work and if there’s any problem in the future he would always come and sort it out."
   },
   {
-    name: "Callum Glass",
-    text: "Fantastic as always. Everything moved out and into the new home for my Mother in law. No damages, everything sheeted and kept clean. Top set of lads. Even plumbed the washing machine in for us. Highly recommend and will continue to use Kev and his team."
+    name: "Danielle Barron",
+    text: "Absolutely love our new flooring. Kai and the team were fantastic. We were moving into a new house and couldn’t commit to dates for fitting until last minute. As soon as we had a date Kai made sure we weren’t left waiting for our flooring and it was fitted the day after we moved in. Amazing, would definitely recommend."
   }
 ];
 ---
 
-<section class="py-24 bg-brand-light" id="testimonials">
+<section class="py-24 bg-slate-50" id="testimonials">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal-on-scroll">
-    <h2 class="text-3xl md:text-5xl font-heading font-bold text-brand-navy mb-4">
-      What Our <span class="text-brand-teal">Customers</span> Say
+    <span class="text-brand-teal font-bold tracking-widest uppercase text-sm mb-3 block">Client Feedback</span>
+    <h2 class="text-3xl md:text-5xl font-heading font-black text-brand-navy mb-4 uppercase tracking-tight">
+      What Our <span class="text-brand-teal">Clients</span> Say
     </h2>
-    <p class="text-gray-600 max-w-2xl mx-auto font-sans mb-12">
-      With over 130 five-star reviews on Facebook, see why KMS Removals is the most trusted moving and clearance team in Doncaster and across the UK.
+    <p class="text-gray-600 max-w-2xl mx-auto font-sans mb-12 font-medium leading-relaxed">
+      See why KM Flooring is trusted across Hull and East Yorkshire for flawless installations, premium LVT, and unparalleled attention to detail.
     </p>
   </div>
 
@@ -44,17 +45,24 @@ const reviews = [
     <div id="testimonial-track" class="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-8 pt-4 px-2 hide-scrollbar scroll-smooth reveal-on-scroll">
       
       {reviews.map((review) => (
-        <div class="testimonial-card snap-center shrink-0 w-[85vw] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-white rounded-xl shadow-sm border border-gray-100 p-8 flex flex-col justify-between hover:shadow-md transition-shadow">
-          <div>
-            <p class="text-gray-600 italic mb-6 text-sm leading-relaxed">
+        <div class="testimonial-card snap-center shrink-0 w-[85vw] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-white rounded-xl shadow-sm border border-gray-100 p-8 flex flex-col justify-between hover:shadow-md transition-shadow relative">
+          
+          <svg class="absolute top-6 left-6 w-10 h-10 text-slate-100 -z-0" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+          </svg>
+
+          <div class="relative z-10">
+            <p class="text-gray-700 italic mb-8 text-sm md:text-base leading-relaxed font-medium">
               "{review.text}"
             </p>
           </div>
-          <div class="flex flex-col items-center">
-            <p class="font-heading font-bold text-brand-navy text-sm uppercase tracking-wide">{review.name}</p>
-            <div class="flex text-yellow-400 mt-2">
+          
+          <div class="flex flex-col items-center relative z-10 pt-4 border-t border-slate-100">
+            <p class="font-heading font-black text-brand-navy text-sm uppercase tracking-wide">{review.name}</p>
+            
+            <div class="flex text-brand-teal mt-2">
               {[1, 2, 3, 4, 5].map(() => (
-                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 fill-current drop-shadow-sm" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
               ))}
             </div>
           </div>

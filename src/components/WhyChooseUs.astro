@@ -1,177 +1,142 @@
 ---
 // src/components/WhyChooseUs.astro
+
+// High-quality wood flooring image
+const whyChooseUsImage = "/images/why-choose-us.jpg";
 ---
 
-<section class="relative py-24 bg-brand-navy overflow-hidden" id="about">
-  
-  <div class="absolute inset-0 z-0 opacity-10 pointer-events-none paving-pattern"></div>
-
-  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<section class="py-24 bg-white overflow-hidden relative" id="why-choose-us">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
       
-      <div class="reveal-left">
-        <h2 class="text-3xl md:text-5xl font-heading font-bold text-white mb-6">
-          About <span class="text-brand-teal">KMS Removals</span>
+      <div class="mb-12 lg:mb-0 reveal-left">
+        <span class="text-brand-teal font-bold tracking-widest uppercase text-sm mb-3 block">Why Choose KM Flooring</span>
+        <h2 class="text-3xl md:text-5xl font-heading font-black text-brand-navy mb-6 leading-tight uppercase tracking-tight">
+          A Flawless Finish, <span class="text-brand-teal">Every Time.</span>
         </h2>
-        <p class="text-brand-light/90 text-lg mb-8 font-sans leading-relaxed">
-          Based in Doncaster and covering the entire UK, KMS Removals brings over a decade of hands-on experience to every job. Whether you are moving down the street or across the country, our priority is providing an affordable, efficient, and stress-free service.
+        <p class="text-lg text-gray-600 mb-10 font-sans font-medium leading-relaxed max-w-2xl">
+          Whether you're looking for classic herringbone or sleek straight planks, we provide end-to-end flooring solutions. We handle everything from crucial subfloor preparation to the final fitting, ensuring your new floor is perfect.
         </p>
-        
-        <ul class="space-y-4 mb-10 text-brand-light font-medium">
-          <li class="flex items-center">
-            <svg class="w-6 h-6 text-brand-teal mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-            Over 10 years of trusted, professional removal experience.
-          </li>
-          <li class="flex items-center">
-            <svg class="w-6 h-6 text-brand-teal mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-            Fully insured with Public Liability and Goods in Transit coverage.
-          </li>
-          <li class="flex items-center">
-            <svg class="w-6 h-6 text-brand-teal mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-            A dedicated, hardworking team that treats your property with respect.
-          </li>
-        </ul>
 
-        <div class="relative rounded-lg overflow-hidden shadow-2xl h-64 sm:h-80 w-full md:w-4/5 border-l-4 border-brand-teal">
-          <img src="/images/who-we-are.jpg" alt="The KMS Removals Team" class="object-cover w-full h-full opacity-90 hover:opacity-100 transition-opacity duration-500" />
-          <div class="absolute inset-0 bg-brand-navy/10 mix-blend-overlay"></div>
+        <div class="space-y-8">
+          
+          <div class="flex items-start">
+            <div class="flex-shrink-0 mt-1">
+              <div class="flex items-center justify-center h-12 w-12 rounded-md bg-brand-navy text-brand-teal shadow-md">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg>
+              </div>
+            </div>
+            <div class="ml-5">
+              <h4 class="text-xl font-heading font-bold text-brand-navy">Expert Installation</h4>
+              <p class="mt-2 text-gray-600 font-medium">Attention to detail is our priority. We expertly lay custom borders, feature strips, and complex patterns that transform your space.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start">
+            <div class="flex-shrink-0 mt-1">
+              <div class="flex items-center justify-center h-12 w-12 rounded-md bg-brand-navy text-brand-teal shadow-md">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+              </div>
+            </div>
+            <div class="ml-5">
+              <h4 class="text-xl font-heading font-bold text-brand-navy">Premium Materials</h4>
+              <p class="mt-2 text-gray-600 font-medium">We supply top-tier LVT that offers the beautiful look of real wood, combined with water resistance and the strength to handle busy, pet-friendly homes.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start">
+            <div class="flex-shrink-0 mt-1">
+              <div class="flex items-center justify-center h-12 w-12 rounded-md bg-brand-navy text-brand-teal shadow-md">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              </div>
+            </div>
+            <div class="ml-5">
+              <h4 class="text-xl font-heading font-bold text-brand-navy">Unbeatable Value</h4>
+              <p class="mt-2 text-gray-600 font-medium">High standards shouldn't mean inflated prices. We offer competitive rates and completely free, no-obligation quotes across East Yorkshire.</p>
+            </div>
+          </div>
+
         </div>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 reveal-right">
+      <div class="relative mt-10 lg:mt-0 reveal-right">
+        <div class="absolute -inset-4 bg-brand-teal/20 rounded-2xl transform translate-x-4 translate-y-4"></div>
         
-        <div class="bg-white/5 border border-white/10 backdrop-blur-sm rounded-xl p-8 text-center transform transition-transform hover:-translate-y-2">
-          <div class="text-brand-teal mb-4 flex justify-center">
-            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-          </div>
-          <div class="flex justify-center items-baseline text-white font-heading font-bold text-5xl mb-2">
-            <span class="stat-number" data-target="10">0</span>
-            <span class="text-brand-teal ml-1">+</span>
-          </div>
-          <p class="text-brand-light/70 uppercase tracking-wider text-sm font-semibold">Years Experience</p>
+        <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white aspect-[4/5] md:aspect-auto md:h-[600px]">
+          <img 
+            src={whyChooseUsImage} 
+            alt="Expert LVT Flooring Installation" 
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-navy/60 via-transparent to-transparent"></div>
         </div>
 
-        <div class="bg-white/5 border border-white/10 backdrop-blur-sm rounded-xl p-8 text-center transform transition-transform hover:-translate-y-2 sm:translate-y-8">
-          <div class="text-brand-teal mb-4 flex justify-center">
-            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+        <div class="absolute -bottom-6 -left-6 md:bottom-10 md:-left-10 bg-white p-6 rounded-xl shadow-xl border-t-4 border-brand-teal flex items-center gap-4 animate-float">
+          <div class="bg-brand-navy text-brand-teal rounded-full p-4 flex-shrink-0">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
           </div>
-          <div class="flex justify-center items-baseline text-white font-heading font-bold text-5xl mb-2">
-            <span class="stat-number" data-target="130">0</span>
-            <span class="text-brand-teal ml-1">+</span>
+          <div>
+            <p class="text-sm text-gray-500 font-bold uppercase tracking-wider mb-1">Guaranteed</p>
+            <p class="text-2xl font-black text-brand-navy font-heading">Flawless Finish</p>
           </div>
-          <p class="text-brand-light/70 uppercase tracking-wider text-sm font-semibold">5-Star Reviews</p>
         </div>
-
-        <div class="bg-white/5 border border-white/10 backdrop-blur-sm rounded-xl p-8 text-center transform transition-transform hover:-translate-y-2">
-          <div class="text-brand-teal mb-4 flex justify-center">
-            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path></svg>
-          </div>
-          <div class="flex justify-center items-baseline text-white font-heading font-bold text-5xl mb-2">
-            <span class="stat-number" data-target="100">0</span>
-            <span class="text-brand-teal ml-1">%</span>
-          </div>
-          <p class="text-brand-light/70 uppercase tracking-wider text-sm font-semibold">Reliability</p>
-        </div>
-
-        <div class="bg-brand-teal rounded-xl p-8 text-center flex flex-col justify-center items-center transform transition-transform hover:-translate-y-2 sm:translate-y-8 shadow-lg">
-          <h3 class="text-brand-navy font-heading font-bold text-2xl mb-4">Ready to move?</h3>
-          <button class="quote-trigger bg-brand-navy text-white px-6 py-3 rounded-md hover:bg-white hover:text-brand-navy transition-colors font-heading font-bold shadow-md cursor-pointer">
-            Get Your Quote
-          </button>
-        </div>
-
+        
       </div>
+
     </div>
   </div>
 </section>
 
 <style>
-  .paving-pattern {
-    background-color: transparent;
-    background-image: linear-gradient(335deg, rgba(255,255,255,0.03) 23px, transparent 23px),
-                      linear-gradient(155deg, rgba(255,255,255,0.03) 23px, transparent 23px),
-                      linear-gradient(335deg, rgba(255,255,255,0.03) 23px, transparent 23px),
-                      linear-gradient(155deg, rgba(255,255,255,0.03) 23px, transparent 23px);
-    background-size: 58px 58px;
-    background-position: 0px 2px, 4px 35px, 29px 31px, 34px 6px;
-  }
-
+  /* Scroll Reveal Animations */
   .reveal-left {
     opacity: 0;
     transform: translateX(-40px);
-    transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
   }
+  
   .reveal-right {
     opacity: 0;
     transform: translateX(40px);
-    transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
   }
 
-  .is-revealed {
+  .reveal-left.is-visible,
+  .reveal-right.is-visible {
     opacity: 1;
     transform: translateX(0);
+  }
+
+  /* Floating animation for the badge */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
   }
 </style>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    
-    const revealOptions = { root: null, rootMargin: '0px', threshold: 0.2 };
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.2
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('is-revealed');
+          entry.target.classList.add('is-visible');
           observer.unobserve(entry.target);
         }
       });
-    }, revealOptions);
+    }, observerOptions);
 
-    document.querySelectorAll('.reveal-left, .reveal-right').forEach(el => revealObserver.observe(el));
-
-    const stats = document.querySelectorAll('.stat-number');
-    let hasAnimated = false; 
-
-    const animateStats = () => {
-      stats.forEach(stat => {
-        const target = parseInt(stat.getAttribute('data-target') || '0', 10);
-        const duration = 2000; 
-        const frameDuration = 1000 / 60; 
-        const totalFrames = Math.round(duration / frameDuration);
-        const easeOutQuad = (t: number) => t * (2 - t); 
-
-        let frame = 0;
-        const counter = setInterval(() => {
-          frame++;
-          const progress = easeOutQuad(frame / totalFrames);
-          const currentCount = Math.round(target * progress);
-
-          if (stat.textContent !== null) {
-            stat.textContent = currentCount.toString();
-          }
-
-          if (frame === totalFrames) {
-            clearInterval(counter);
-            if (stat.textContent !== null) {
-              stat.textContent = target.toString(); 
-            }
-          }
-        }, frameDuration);
-      });
-    };
-
-    const statsObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && !hasAnimated) {
-          hasAnimated = true;
-          animateStats();
-        }
-      });
-    }, { threshold: 0.2 });
-
-    const statsContainer = document.querySelector('.reveal-right');
-    if (statsContainer) {
-      statsObserver.observe(statsContainer);
-    }
-
+    const animatedElements = document.querySelectorAll('.reveal-left, .reveal-right');
+    animatedElements.forEach((el) => observer.observe(el));
   });
 </script>

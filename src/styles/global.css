@@ -2,13 +2,13 @@
 @import "tailwindcss";
 
 @theme {
-  /* KMS Removals Brand Colors */
-  --color-brand-navy: #0a0a3c; /* Deep KMS Navy */
-  --color-brand-teal: #00d2ff; /* KMS Bright Cyan/Light Blue */
+  /* KM Flooring Brand Colors */
+  --color-brand-navy: #0f172a; /* Deep Slate/Charcoal */
+  --color-brand-teal: #c2853d; /* Warm Oak/Amber */
   --color-brand-light: #f8fafc; 
 
   --font-sans: "Inter", system-ui, sans-serif;
   --font-heading: "Montserrat", system-ui, sans-serif;
 
-  --shadow-subtle: 0 4px 6px -1px rgba(10, 10, 60, 0.05), 0 2px 4px -1px rgba(10, 10, 60, 0.03);
+  --shadow-subtle: 0 4px 6px -1px rgba(15, 23, 42, 0.05), 0 2px 4px -1px rgba(15, 23, 42, 0.03);
 }
