@@ -1,0 +1,182 @@
+---
+// src/components/QuoteModal.astro
+---
+
+<div id="quote-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+  <div class="fixed inset-0 bg-brand-navy/80 backdrop-blur-sm transition-opacity" id="quote-modal-backdrop"></div>
+
+  <div class="relative bg-white rounded-lg shadow-xl w-full max-w-4xl max-h-[90vh] overflow-y-auto z-10 p-6 sm:p-8">
+    
+    <button type="button" id="close-quote-btn" class="absolute top-4 right-4 text-gray-400 hover:text-brand-navy focus:outline-none cursor-pointer">
+      <span class="sr-only">Close menu</span>
+      <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+
+    <div class="text-center mb-6">
+      <h2 class="text-2xl font-heading font-bold text-brand-navy" id="modal-title">Get Your Free Moving Quote</h2>
+      <p class="text-sm text-gray-600 mt-1">Fill out the details below to send your request directly to our WhatsApp!</p>
+    </div>
+
+    <form id="whatsapp-quote-form" class="space-y-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-medium text-gray-700">First Name <span class="text-red-500">*</span></label>
+          <input type="text" id="wa-fname" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-brand-teal focus:ring-brand-teal sm:text-sm p-2 border" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Last Name <span class="text-red-500">*</span></label>
+          <input type="text" id="wa-lname" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-brand-teal focus:ring-brand-teal sm:text-sm p-2 border" />
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Phone Number <span class="text-red-500">*</span></label>
+          <input type="tel" id="wa-phone" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-brand-teal focus:ring-brand-teal sm:text-sm p-2 border" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Service Required <span class="text-red-500">*</span></label>
+          <select id="wa-service" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-brand-teal focus:ring-brand-teal sm:text-sm p-2 border bg-white">
+            <option value="">Please select...</option>
+            <option value="Full House Move">Full House Move</option>
+            <option value="Half House Move">Half House Move</option>
+            <option value="Single/Large Item Collection">Single/Large Item Collection</option>
+            <option value="Store Pickup (B&Q, Wickes, etc.)">Store Pickup (B&Q, Wickes, etc.)</option>
+            <option value="Home/Office Clearance">Home/Office Clearance</option>
+            <option value="Scrap Metal Collection">Scrap Metal Collection</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 border-t border-b py-4">
+        <div class="space-y-4">
+          <h3 class="text-lg font-medium text-brand-navy">Moving From:</h3>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Collection Postcode <span class="text-red-500">*</span></label>
+            <input type="text" id="wa-c-postcode" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-brand-teal focus:ring-brand-teal sm:text-sm p-2 border" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Property Type</label>
+            <select id="wa-c-type" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-brand-teal focus:ring-brand-teal sm:text-sm p-2 border bg-white">
+              <option value="Not Specified">Select...</option>
+              <option value="House">House</option>
+              <option value="Flat (Ground Floor)">Flat (Ground Floor)</option>
+              <option value="Flat (With Lift)">Flat (With Lift)</option>
+              <option value="Flat (Stairs Only)">Flat (Stairs Only)</option>
+              <option value="Storage Unit / Store">Storage Unit / Store</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+          <h3 class="text-lg font-medium text-brand-navy">Moving To:</h3>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Delivery Postcode <span class="text-gray-400 font-normal">(Leave blank if clearance)</span></label>
+            <input type="text" id="wa-d-postcode" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-brand-teal focus:ring-brand-teal sm:text-sm p-2 border" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Timescale <span class="text-red-500">*</span></label>
+            <select id="wa-timescale" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-brand-teal focus:ring-brand-teal sm:text-sm p-2 border bg-white">
+              <option value="">Select...</option>
+              <option value="Urgent">Urgent</option>
+              <option value="In a week">In a week</option>
+              <option value="In two weeks">In two weeks</option>
+              <option value="Flexible">Flexible</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-4">
+        <div>
+          <label class="block text-sm font-medium text-gray-700">List of Items to Move</label>
+          <textarea id="wa-items" rows="4" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-brand-teal focus:ring-brand-teal sm:text-sm p-2 border" placeholder="E.g. 3 seater sofa, washing machine, 10 boxes..."></textarea>
+        </div>
+        
+        <div class="flex items-center mt-2">
+          <input id="wa-dismantling" type="checkbox" class="h-4 w-4 text-brand-teal focus:ring-brand-teal border-gray-300 rounded">
+          <label for="wa-dismantling" class="ml-2 block text-sm text-gray-700">
+            I require furniture dismantling/reassembling (Free of charge)
+          </label>
+        </div>
+      </div>
+
+      <div class="pt-4">
+        <button type="submit" class="w-full cursor-pointer inline-flex justify-center items-center bg-[#25D366] text-white px-6 py-3 rounded-md hover:bg-[#128C7E] transition-colors font-heading font-bold shadow-md">
+          <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Send to WhatsApp
+        </button>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+<script>
+  const form = document.getElementById('whatsapp-quote-form');
+  
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault(); 
+
+      const fname = (document.getElementById('wa-fname') as HTMLInputElement).value;
+      const lname = (document.getElementById('wa-lname') as HTMLInputElement).value;
+      const phone = (document.getElementById('wa-phone') as HTMLInputElement).value;
+      const service = (document.getElementById('wa-service') as HTMLSelectElement).value;
+      
+      const cPostcode = (document.getElementById('wa-c-postcode') as HTMLInputElement).value;
+      const cType = (document.getElementById('wa-c-type') as HTMLSelectElement).value;
+      
+      const dPostcode = (document.getElementById('wa-d-postcode') as HTMLInputElement).value || "N/A";
+      const timescale = (document.getElementById('wa-timescale') as HTMLSelectElement).value; // Grab timescale
+      
+      const items = (document.getElementById('wa-items') as HTMLTextAreaElement).value || "None specified";
+      const dismantling = (document.getElementById('wa-dismantling') as HTMLInputElement).checked;
+
+      // Included timescale into the message
+      const message = `*New Website Quote Request* 🚚📦\n\n` +
+                      `*Name:* ${fname} ${lname}\n` +
+                      `*Phone:* ${phone}\n` +
+                      `*Service Required:* ${service}\n` +
+                      `*Timescale:* ${timescale}\n\n` +
+                      `*📍 Collection:* ${cPostcode} (${cType})\n` +
+                      `*📍 Delivery:* ${dPostcode}\n\n` +
+                      `*Requires Dismantling:* ${dismantling ? 'Yes ✅' : 'No ❌'}\n\n` +
+                      `*Items to Move:*\n${items}`;
+
+      const whatsappUrl = `https://wa.me/447395936013?text=${encodeURIComponent(message)}`;
+      window.open(whatsappUrl, '_blank');
+      
+      document.getElementById('quote-modal')?.classList.add('hidden');
+      document.getElementById('quote-modal')?.classList.remove('flex');
+      document.body.style.overflow = 'auto';
+    });
+  }
+
+  const openModalBtns = document.querySelectorAll('.quote-trigger');
+  const closeModalBtn = document.getElementById('close-quote-btn');
+  const modalBackdrop = document.getElementById('quote-modal-backdrop');
+  const modal = document.getElementById('quote-modal');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  openModalBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      modal?.classList.remove('hidden');
+      modal?.classList.add('flex');
+      document.body.style.overflow = 'hidden'; 
+      if(mobileMenu) mobileMenu.classList.add('hidden');
+    });
+  });
+
+  const closeModal = () => {
+    modal?.classList.add('hidden');
+    modal?.classList.remove('flex');
+    document.body.style.overflow = 'auto';
+  };
+
+  if(closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+  if(modalBackdrop) modalBackdrop.addEventListener('click', closeModal);
+</script>

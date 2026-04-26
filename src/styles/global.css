@@ -1,0 +1,14 @@
+/* src/styles/global.css */
+@import "tailwindcss";
+
+@theme {
+  /* KMS Removals Brand Colors */
+  --color-brand-navy: #0a0a3c; /* Deep KMS Navy */
+  --color-brand-teal: #00d2ff; /* KMS Bright Cyan/Light Blue */
+  --color-brand-light: #f8fafc; 
+
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-heading: "Montserrat", system-ui, sans-serif;
+
+  --shadow-subtle: 0 4px 6px -1px rgba(10, 10, 60, 0.05), 0 2px 4px -1px rgba(10, 10, 60, 0.03);
+}

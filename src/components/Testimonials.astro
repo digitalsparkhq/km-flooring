@@ -1,0 +1,128 @@
+---
+// src/components/Testimonials.astro
+
+const reviews = [
+  {
+    name: "Nichole Kidson",
+    text: "We've used kms twice now for house moves and I wouldn't want to ask anyone else! Hands down the best removal team around. Nothing is too much to ask. All the people working are incredibly helpful and diligent. Both times they have made my house move as stress free as possible. I am so grateful to you all."
+  },
+  {
+    name: "Dave Atkinson",
+    text: "Absolutely brilliant set of lads, bent over backwards to not let us down despite the problems with the van. Lads are so polite and what a work ethic with the hours they are putting in. Can’t recommend them highly enough. Big thanks to Kev and the team."
+  },
+  {
+    name: "Kyrie Brumby",
+    text: "Kian and Danny moved us yesterday. They were absolutely incredible, they went above and beyond, nothing was too much trouble. Highly recommend and decently priced too!"
+  },
+  {
+    name: "Kiera Gray",
+    text: "Amazing service used twice now. No messing with these lads. Straight to it. Price as well is spot on. They go above and beyond. Will not hesitate to recommend to anyone. Thank you again."
+  },
+  {
+    name: "Callum Glass",
+    text: "Fantastic as always. Everything moved out and into the new home for my Mother in law. No damages, everything sheeted and kept clean. Top set of lads. Even plumbed the washing machine in for us. Highly recommend and will continue to use Kev and his team."
+  }
+];
+---
+
+<section class="py-24 bg-brand-light" id="testimonials">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal-on-scroll">
+    <h2 class="text-3xl md:text-5xl font-heading font-bold text-brand-navy mb-4">
+      What Our <span class="text-brand-teal">Customers</span> Say
+    </h2>
+    <p class="text-gray-600 max-w-2xl mx-auto font-sans mb-12">
+      With over 130 five-star reviews on Facebook, see why KMS Removals is the most trusted moving and clearance team in Doncaster and across the UK.
+    </p>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <button id="prev-testimonial" aria-label="Previous testimonial" class="absolute left-0 top-1/2 -translate-y-1/2 -ml-4 lg:-ml-6 z-10 bg-white text-brand-navy p-3 rounded-full shadow-md hover:text-brand-teal hover:shadow-lg transition-all focus:outline-none hidden sm:block cursor-pointer border border-gray-100">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+    </button>
+
+    <div id="testimonial-track" class="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-8 pt-4 px-2 hide-scrollbar scroll-smooth reveal-on-scroll">
+      
+      {reviews.map((review) => (
+        <div class="testimonial-card snap-center shrink-0 w-[85vw] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-white rounded-xl shadow-sm border border-gray-100 p-8 flex flex-col justify-between hover:shadow-md transition-shadow">
+          <div>
+            <p class="text-gray-600 italic mb-6 text-sm leading-relaxed">
+              "{review.text}"
+            </p>
+          </div>
+          <div class="flex flex-col items-center">
+            <p class="font-heading font-bold text-brand-navy text-sm uppercase tracking-wide">{review.name}</p>
+            <div class="flex text-yellow-400 mt-2">
+              {[1, 2, 3, 4, 5].map(() => (
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+      
+    </div>
+
+    <button id="next-testimonial" aria-label="Next testimonial" class="absolute right-0 top-1/2 -translate-y-1/2 -mr-4 lg:-mr-6 z-10 bg-white text-brand-navy p-3 rounded-full shadow-md hover:text-brand-teal hover:shadow-lg transition-all focus:outline-none hidden sm:block cursor-pointer border border-gray-100">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+    </button>
+    
+  </div>
+</section>
+
+<style>
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .is-revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    
+    const revealOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, revealOptions);
+
+    document.querySelectorAll('.reveal-on-scroll').forEach(el => revealObserver.observe(el));
+
+    const track = document.getElementById('testimonial-track');
+    const prevBtn = document.getElementById('prev-testimonial');
+    const nextBtn = document.getElementById('next-testimonial');
+
+    if (track && prevBtn && nextBtn) {
+      const scrollCards = () => {
+        const card = track.querySelector('.testimonial-card') as HTMLElement;
+        if (!card) return 0;
+        return card.offsetWidth + 24; 
+      };
+
+      prevBtn.addEventListener('click', () => {
+        track.scrollBy({ left: -scrollCards(), behavior: 'smooth' });
+      });
+
+      nextBtn.addEventListener('click', () => {
+        track.scrollBy({ left: scrollCards(), behavior: 'smooth' });
+      });
+    }
+  });
+</script>
