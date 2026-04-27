@@ -4,23 +4,87 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import QuoteModal from '../components/QuoteModal.astro';
 
-// Set KM Flooring as the default title if one isn't provided by the specific page
-const { title = "KM Flooring | Premium LVT & Flooring Installation in Hull" } = Astro.props;
+// We define your final domain here so it populates the Schema and Meta tags perfectly
+const { 
+  title = "KM Flooring | Premium LVT & Flooring Installation in Hull",
+  description = "Expert flooring contractors in Hull & East Yorkshire. Specialising in premium LVT, herringbone patterns, Karndean, and safety flooring with a flawless finish.",
+  image = "/images/hero1.jpg",
+  websiteUrl = "https://kmfloors.co.uk" // <-- Change this if you buy a different domain
+} = Astro.props;
+
+// Use the defined websiteUrl for the canonical link if not explicitly passed
+const canonicalURL = Astro.props.canonicalURL || new URL(Astro.url.pathname, websiteUrl).href;
+
+// Structured Data (Schema.org) for Local Business
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "KM Flooring",
+  "image": new URL(image, websiteUrl).href,
+  "@id": websiteUrl,
+  "url": websiteUrl, // <-- Explicitly tells Google this is your official URL
+  "telephone": "+447535347712",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Hull",
+    "addressRegion": "East Yorkshire",
+    "addressCountry": "UK"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 53.7676, 
+    "longitude": -0.3274
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
+    ],
+    "opens": "08:00",
+    "closes": "18:00"
+  },
+  "sameAs": [
+    "https://www.facebook.com/kmlvtflooring"
+  ],
+  "priceRange": "$$"
+};
 ---
 
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
     <title>{title}</title>
-    </head>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="keywords" content="LVT flooring Hull, luxury vinyl tile fitters, herringbone flooring East Yorkshire, Karndean fitters Hull, safety flooring contractors, premium flooring installation, floor levelling, subfloor preparation Hull" />
+    <link rel="canonical" href={canonicalURL} />
+
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
+    <link rel="apple-touch-icon" href="/images/favicon.png" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, websiteUrl).href} />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={new URL(image, websiteUrl).href} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
   <body class="bg-brand-light font-sans text-brand-navy antialiased flex flex-col min-h-screen">
     
     <Header />
     
-    <div class="flex-grow">
+    <main class="flex-grow w-full overflow-x-hidden">
       <slot /> 
-    </div>
+    </main>
 
     <Footer />
     

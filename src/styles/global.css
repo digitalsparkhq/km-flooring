@@ -2,13 +2,19 @@
 @import "tailwindcss";
 
 @theme {
-  /* KM Flooring Brand Colors */
-  --color-brand-navy: #0f172a; /* Deep Slate/Charcoal */
-  --color-brand-teal: #c2853d; /* Warm Oak/Amber */
-  --color-brand-light: #f8fafc; 
+  /* KM Flooring Brand Colors - Oak Logo Theme */
+  
+  /* Changed from blue-slate to a deep, dark Espresso/Walnut */
+  --color-brand-navy: #241c18; 
+  
+  /* The classic, warm Oak tone matched directly from your logo's mid-tones */
+  --color-brand-teal: #a66d42; 
+  
+  /* Warmed up the white slightly to a soft cream so it pairs beautifully with the wood tones */
+  --color-brand-light: #fcfaf8; 
 
   --font-sans: "Inter", system-ui, sans-serif;
   --font-heading: "Montserrat", system-ui, sans-serif;
 
-  --shadow-subtle: 0 4px 6px -1px rgba(15, 23, 42, 0.05), 0 2px 4px -1px rgba(15, 23, 42, 0.03);
+  --shadow-subtle: 0 4px 6px -1px rgba(36, 28, 24, 0.08), 0 2px 4px -1px rgba(36, 28, 24, 0.04);
 }
