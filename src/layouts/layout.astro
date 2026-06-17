@@ -6,10 +6,10 @@ import QuoteModal from '../components/QuoteModal.astro';
 
 // We define your final domain here so it populates the Schema and Meta tags perfectly
 const { 
-  title = "KM Flooring | Premium LVT & Flooring Installation in Hull",
+  title = "KRM Flooring | Premium LVT & Flooring Installation in Hull",
   description = "Expert flooring contractors in Hull & East Yorkshire. Specialising in premium LVT, herringbone patterns, Karndean, and safety flooring with a flawless finish.",
-  image = "/images/hero1.jpg",
-  websiteUrl = "https://kmfloors.co.uk" // <-- Change this if you buy a different domain
+  image = "/images/social-logo.jpg", // <-- Changed to your non-transparent social logo
+  websiteUrl = "https://krmflooringltd.co.uk" // <-- Change this if you buy a different domain
 } = Astro.props;
 
 // Use the defined websiteUrl for the canonical link if not explicitly passed
@@ -19,7 +19,7 @@ const canonicalURL = Astro.props.canonicalURL || new URL(Astro.url.pathname, web
 const schema = {
   "@context": "https://schema.org",
   "@type": "HomeAndConstructionBusiness",
-  "name": "KM Flooring",
+  "name": "KRM Flooring Ltd",
   "image": new URL(image, websiteUrl).href,
   "@id": websiteUrl,
   "url": websiteUrl, // <-- Explicitly tells Google this is your official URL
@@ -64,12 +64,14 @@ const schema = {
     <link rel="icon" type="image/png" href="/images/favicon.png" />
     <link rel="apple-touch-icon" href="/images/favicon.png" />
 
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={new URL(image, websiteUrl).href} />
 
+    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={canonicalURL} />
     <meta property="twitter:title" content={title} />

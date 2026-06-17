@@ -7,7 +7,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://kmfloors.co.uk',
+  site: 'https://krmflooringltd.co.uk',
 
   vite: {
     plugins: [tailwindcss()]

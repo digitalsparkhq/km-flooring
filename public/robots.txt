@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /404
 
-Sitemap: https://kmfloors.co.uk/sitemap-index.xml
+Sitemap: https://krmflooringltd.co.uk/sitemap-index.xml
